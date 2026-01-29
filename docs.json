@@ -1,68 +1,98 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mi11111t tarter Kit",
+  "name": "Linkr Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#053EEA",
+    "light": "#3366FF",
+    "dark": "#0332C0"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "docs/introduction/what-is-linkr",
+              "docs/introduction/why-connectivity",
+              "docs/introduction/how-linkr-is-different"
             ]
           },
           {
-            "group": "Customization",
+            "group": "How Linkr Works",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "docs/how-it-works/overview",
+              "docs/how-it-works/hotspots",
+              "docs/how-it-works/community",
+              "docs/how-it-works/discovery",
+              "docs/how-it-works/live-map"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Getting Started",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "docs/getting-started/create-account",
+              "docs/getting-started/install-app",
+              "docs/getting-started/first-experience"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Mobile App",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "docs/mobile-app/overview",
+              "docs/mobile-app/account",
+              "docs/mobile-app/map-view",
+              "docs/mobile-app/creating-hotspots",
+              "docs/mobile-app/managing-hotspots",
+              "docs/mobile-app/connecting"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Sharing a Hotspot",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "docs/sharing/overview",
+              "docs/sharing/public-vs-private",
+              "docs/sharing/visibility",
+              "docs/sharing/after-sharing"
+            ]
+          },
+          {
+            "group": "The Linkr Map",
+            "pages": [
+              "docs/map/overview",
+              "docs/map/reading-the-map",
+              "docs/map/finding-connectivity"
+            ]
+          },
+          {
+            "group": "For Organizations",
+            "pages": [
+              "docs/organizations/overview",
+              "docs/organizations/use-cases",
+              "docs/organizations/deployment"
+            ]
+          },
+          {
+            "group": "Network Philosophy",
+            "pages": [
+              "docs/philosophy/community-infrastructure",
+              "docs/philosophy/observability",
+              "docs/philosophy/connectivity-as-infrastructure"
+            ]
+          },
+          {
+            "group": "Team",
+            "pages": [
+              "docs/team"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "pages": [
+              "docs/faq"
             ]
           }
         ]
@@ -71,14 +101,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Status",
+          "href": "http://linkrmap.com/status",
+          "icon": "signal-bars"
         }
       ]
     }
@@ -91,32 +116,19 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@linkrmap.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "http://linkrmap.com/"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/uselinkr",
+      "website": "http://linkrmap.com/"
     }
   }
 }

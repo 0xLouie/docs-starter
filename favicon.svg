@@ -1,19 +1,7 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.06145 23.1079C5.26816 22.3769 -3.39077 20.6274 1.4173 5.06384C9.6344 6.09939 16.9728 14.0644 9.06145 23.1079Z" fill="url(#paint0_linear_17557_2021)"/>
-<path d="M8.91928 23.0939C5.27642 21.2223 0.78371 4.20891 17.0071 0C20.7569 7.19341 19.6212 16.5452 8.91928 23.0939Z" fill="url(#paint1_linear_17557_2021)"/>
-<path d="M8.91388 23.0788C8.73534 19.8817 10.1585 9.08525 23.5699 13.1107C23.1812 20.1229 18.984 26.4182 8.91388 23.0788Z" fill="url(#paint2_linear_17557_2021)"/>
-<defs>
-<linearGradient id="paint0_linear_17557_2021" x1="3.77557" y1="5.91571" x2="5.23185" y2="21.5589" gradientUnits="userSpaceOnUse">
-<stop stop-color="#18E299"/>
-<stop offset="1" stop-color="#15803D"/>
-</linearGradient>
-<linearGradient id="paint1_linear_17557_2021" x1="12.1711" y1="-0.718425" x2="10.1897" y2="22.9832" gradientUnits="userSpaceOnUse">
-<stop stop-color="#16A34A"/>
-<stop offset="1" stop-color="#4ADE80"/>
-</linearGradient>
-<linearGradient id="paint2_linear_17557_2021" x1="23.1327" y1="15.353" x2="9.33841" y2="18.5196" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4ADE80"/>
-<stop offset="1" stop-color="#0D9373"/>
-</linearGradient>
-</defs>
+<svg width="581" height="580" viewBox="0 0 581 580" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241.675 338.35V339.821L240.156 338.35H241.675Z" fill="#053EEA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241.699 339.821L240.181 338.35L241.699 338.35L241.699 339.821Z" fill="#053EEA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241.675 339.821V338.35H240.156L241.675 339.821Z" fill="#053EEA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M444.674 580.002C444.674 490.895 418.449 407.905 373.325 338.329H580.01V580.002H444.674ZM241.671 339.793L240.16 338.329C178.27 278.534 93.4964 241.66 0 241.66V338.329C133.466 338.329 241.671 446.535 241.671 580.002H343.173C343.173 486.08 304.354 401.098 241.671 339.793ZM0 580.002V430.165C85.4155 430.165 154.669 497.248 154.669 580.002H0Z" fill="#053EEA"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M241.671 0H0V135.337C89.1161 135.337 172.096 161.543 241.671 206.678V0Z" fill="#053EEA"/>
 </svg>

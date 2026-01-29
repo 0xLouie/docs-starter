@@ -1,0 +1,81 @@
+---
+title: How Linkr Works
+description: The system flow from contribution to access
+---
+
+# How Linkr Works
+
+Linkr operates as a simple loop: contribute, observe, discover, access.
+
+---
+
+## The system at a glance
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│    Contribute          Observe           Discover       Access  │
+│                                                                 │
+│    ┌─────────┐       ┌─────────┐       ┌─────────┐   ┌───────┐ │
+│    │ Hotspot │──────►│  Linkr  │──────►│   Map   │──►│ User  │ │
+│    │ shared  │       │ Network │       │ updated │   │connects│ │
+│    └─────────┘       └─────────┘       └─────────┘   └───────┘ │
+│         ▲                 │                               │     │
+│         │                 │                               │     │
+│         └─────────────────┴───────────────────────────────┘     │
+│                      Feedback loop                              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Contribute
+
+Anyone can share a hotspot through the Linkr app. This registers the hotspot with the network and makes it potentially discoverable by others.
+
+Sharing a hotspot does not require special hardware. If you have internet access and a way to create a wireless access point, you can contribute.
+
+---
+
+## Observe
+
+Once a hotspot is shared, Linkr begins tracking its availability. The network observes:
+
+- Whether the hotspot is online
+- How consistently it remains available
+- General performance characteristics
+
+This observation is continuous. The data is real, not estimated.
+
+---
+
+## Discover
+
+Shared hotspots appear on the Linkr map. Users can browse the map to find connectivity near them or in places they plan to visit.
+
+The map shows:
+
+- Hotspot locations
+- Current availability status
+- Reliability indicators based on historical data
+
+---
+
+## Access
+
+When a user finds a suitable hotspot, they can connect through Linkr. The access model depends on how the contributor configured their hotspot — public, limited, or private.
+
+If access is granted, the user connects. The connection is tracked, and availability data continues to update.
+
+---
+
+## The feedback loop
+
+Every connection provides data back to the network. This data improves the accuracy of availability tracking and helps surface the most reliable hotspots.
+
+Contributors see how their hotspots are performing. Users see which hotspots are worth using. The network gets better as more people participate.
+
+<Note>
+Linkr is not a passive directory. It is a live system where contributions create observable, accessible infrastructure.
+</Note>
