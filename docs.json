@@ -14,15 +14,16 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Introduction",
+            "group": "INTRODUCTION",
             "pages": [
               "docs/introduction/what-is-linkr",
               "docs/introduction/why-connectivity",
-              "docs/introduction/how-linkr-is-different"
+              "docs/introduction/how-linkr-is-different",
+              "docs/team"
             ]
           },
           {
-            "group": "How Linkr Works",
+            "group": "HOW LINKR WORKS",
             "pages": [
               "docs/how-it-works/overview",
               "docs/how-it-works/hotspots",
@@ -32,7 +33,7 @@
             ]
           },
           {
-            "group": "Getting Started",
+            "group": "GETTING STARTED",
             "pages": [
               "docs/getting-started/create-account",
               "docs/getting-started/install-app",
@@ -40,7 +41,7 @@
             ]
           },
           {
-            "group": "Mobile App",
+            "group": "MOBILE APP",
             "pages": [
               "docs/mobile-app/overview",
               "docs/mobile-app/account",
@@ -51,7 +52,7 @@
             ]
           },
           {
-            "group": "Sharing a Hotspot",
+            "group": "SHARING A HOTSPOT",
             "pages": [
               "docs/sharing/overview",
               "docs/sharing/public-vs-private",
@@ -60,7 +61,7 @@
             ]
           },
           {
-            "group": "The Linkr Map",
+            "group": "THE LINKR MAP",
             "pages": [
               "docs/map/overview",
               "docs/map/reading-the-map",
@@ -68,7 +69,7 @@
             ]
           },
           {
-            "group": "For Organizations",
+            "group": "FOR ORGANIZATIONS",
             "pages": [
               "docs/organizations/overview",
               "docs/organizations/use-cases",
@@ -76,17 +77,11 @@
             ]
           },
           {
-            "group": "Network Philosophy",
+            "group": "NETWORK PHILOSOPHY",
             "pages": [
               "docs/philosophy/community-infrastructure",
               "docs/philosophy/observability",
               "docs/philosophy/connectivity-as-infrastructure"
-            ]
-          },
-          {
-            "group": "Team",
-            "pages": [
-              "docs/team"
             ]
           },
           {
@@ -101,9 +96,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Status",
-          "href": "http://linkrmap.com/status",
-          "icon": "signal-bars"
+          "anchor": "X",
+          "href": "https://x.com/uselinkr",
+          "icon": "x-twitter"
         }
       ]
     }
