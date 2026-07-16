@@ -1,0 +1,48 @@
+---
+title: Network status
+description: Aggregate status for the NYC preview dataset.
+openapi: "GET /api/v1/network/status"
+---
+
+Returns aggregate status for the New York City preview dataset.
+
+```bash
+curl -H "x-api-key: linkr_test_demo01" \
+  "https://linkrmap.com/api/v1/network/status"
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "status": "operational",
+    "totalNodes": 78,
+    "activeNodes": 76,
+    "avgLatency": "12ms",
+    "avgUptime": "94.2%",
+    "regions": [
+      { "name": "Manhattan", "nodes": 42, "status": "operational" },
+      { "name": "Brooklyn", "nodes": 20, "status": "operational" },
+      { "name": "Queens", "nodes": 10, "status": "operational" },
+      { "name": "Bronx", "nodes": 6, "status": "operational" }
+    ]
+  }
+}
+```
+
+## Fields
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `status` | string | Always `operational` for the preview dataset |
+| `totalNodes` | number | Total hotspots in the dataset (78) |
+| `activeNodes` | number | Hardcoded as `totalNodes - 2` |
+| `avgLatency` | string | Hardcoded `"12ms"` |
+| `avgUptime` | string | Mean of the dataset's `uptime` values, e.g. `"94.2%"` |
+| `regions` | array | Per-borough counts (Manhattan, Brooklyn, Queens, Bronx) |
+
+<Note>
+`activeNodes` and `avgLatency` are fixed values in the preview dataset, not live
+measurements. Live monitoring is on the roadmap; see [Product status](/docs/introduction/status).
+</Note>

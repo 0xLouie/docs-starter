@@ -1,107 +1,54 @@
 ---
-title: Why Observability Matters
-description: Real data over assumptions
+title: Why observability matters
+description: The case for real data over assumptions.
 ---
 
-Linkr treats observability as a core principle. The network does not assume connectivity exists. It observes and verifies.
+Observability is a core principle for Linkr: the network should not assume connectivity
+exists — it should observe and verify.
 
----
+<Note>
+This is a principle guiding where Linkr is headed. **Live monitoring does not exist in
+the current build** — today's data is static. This page describes the goal, not a shipped
+feature. See [Product status](/docs/introduction/status).
+</Note>
 
 ## What observability means
 
-Observability is the ability to understand the state of a system by looking at its outputs.
+Observability is understanding the state of a system by looking at its outputs. Applied
+to connectivity, the goal is:
 
-For Linkr, this means:
+- Hotspots are not assumed to be online — they are checked
+- Reliability is not claimed — it is measured
+- Availability is not promised — it is tracked
 
-- Hotspots are not assumed to be online. They are checked.
-- Reliability is not claimed. It is measured.
-- Availability is not promised. It is tracked.
-
-Everything you see on the map is based on real data, not assertions.
-
----
+This is the direction. Today, hotspot details are the values contributors provide, and
+the public preview uses a static dataset.
 
 ## Why this matters for connectivity
 
-Traditional connectivity information is full of assumptions:
+Traditional connectivity information is full of assumptions. Coverage maps show where
+signals *should* reach. Venue listings claim Wi-Fi without verifying it works. Directories
+list networks that may no longer exist.
 
-- Coverage maps show where signals *should* reach based on tower locations and terrain models
-- Venue listings claim Wi-Fi is available without verifying it works
-- Directories list networks that may or may not still exist
+These assumptions are often wrong, and users cannot tell until they try. Observability is
+meant to replace those assumptions with real data.
 
-These assumptions are often wrong. A coverage map might show strong signal where there is none. A cafe might advertise Wi-Fi that has been broken for months.
+## The intended approach
 
-Users cannot tell the difference until they try. And by then, it is too late.
+As monitoring is built, the aim is:
 
----
-
-## The Linkr approach
-
-Linkr replaces assumptions with observations.
-
-**Status is live.** Each hotspot's current availability is determined by active checks, not by historical data or contributor claims.
-
-**Reliability is measured.** Scores are calculated from observed uptime over time, not from specifications or promises.
-
-**The map reflects reality.** What you see is what has been verified, not what might theoretically exist.
-
----
-
-## How observation works
-
-Linkr continuously monitors shared hotspots:
-
-1. The network checks whether each hotspot is reachable
-2. Check results are recorded
-3. Data is aggregated to calculate status and reliability
-4. The map is updated
-
-This happens automatically and continuously. Contributors do not need to report their status. It is observed.
-
----
-
-## Benefits of observability
-
-**Trust.** Users can rely on the map because it reflects verified data.
-
-**Accountability.** Contributors see how their hotspots actually perform, not how they think they perform.
-
-**Improvement.** Problems surface quickly, enabling faster fixes.
-
-**Honesty.** No one can claim reliability they do not have.
-
----
+- **Status becomes live** — each hotspot's current availability determined by active checks
+- **Reliability becomes measured** — scores calculated from observed uptime over time
+- **The map reflects reality** — what you see is what has been verified
 
 ## The limits of observability
 
-Observability is not omniscience. Linkr can observe:
-
-- Whether a hotspot responds to checks
-- How often it has been available over time
-- General availability patterns
-
-Linkr cannot observe:
-
-- Quality of experience for a specific user at a specific moment
-- Root cause of outages
-- Future availability
-
-The map tells you what has been observed. Using that information wisely is up to you.
-
----
-
-## Observability as infrastructure
-
-Infrastructure requires observability. You cannot rely on what you cannot see.
-
-- Power grids monitor voltage and frequency
-- Roads have traffic sensors and condition reports
-- Buildings have fire alarms and occupancy sensors
-
-Connectivity has historically lacked this. You could not see whether a network was online until you tried to connect.
-
-Linkr adds the missing observability layer. The map is not just discovery. It is monitoring, made visible to everyone.
+Even when built, observability will not be omniscience. It can show whether a hotspot
+responds and how often it has been available. It cannot tell you the quality of your
+experience at a specific moment, or guarantee future availability.
 
 <Note>
-Observability is not about being skeptical of contributors. It is about providing everyone, contributors and users alike, with accurate information. Better data leads to better decisions.
+Observability is not about being skeptical of contributors. It is about giving everyone
+accurate information. Better data leads to better decisions — which is why it is a
+priority on the roadmap.
 </Note>

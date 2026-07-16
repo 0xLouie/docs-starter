@@ -1,79 +1,49 @@
 ---
-title: How Linkr Works
-description: The system flow from contribution to access
+title: How Linkr works
+description: The flow from contribution to discovery.
 ---
 
-Linkr operates as a simple loop: contribute, observe, discover, access.
+Linkr follows a simple loop: contribute, discover, access. Access is the part still
+being built — today the network is about contributing hotspots and discovering them.
 
----
+<Note>
+The public map is a curated New York City preview. The steps below describe the beta
+app, where hotspots are actually contributed. See [Product status](/docs/introduction/status).
+</Note>
 
-## The system at a glance
+## The flow
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│    Contribute          Observe           Discover       Access  │
-│                                                                 │
-│    ┌─────────┐       ┌─────────┐       ┌─────────┐   ┌───────┐ │
-│    │ Hotspot │──────►│  Linkr  │──────►│   Map   │──►│ User  │ │
-│    │ shared  │       │ Network │       │ updated │   │connects│ │
-│    └─────────┘       └─────────┘       └─────────┘   └───────┘ │
-│         ▲                 │                               │     │
-│         │                 │                               │     │
-│         └─────────────────┴───────────────────────────────┘     │
-│                      Feedback loop                              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+   Contribute            Discover             Access
+   ┌─────────┐          ┌─────────┐          ┌──────────┐
+   │ Hotspot │ ───────► │   Map   │ ───────► │  Roadmap │
+   │ shared  │          │ listing │          │ (coming) │
+   └─────────┘          └─────────┘          └──────────┘
 ```
-
----
 
 ## Contribute
 
-Anyone can share a hotspot through the Linkr app. This registers the hotspot with the network and makes it potentially discoverable by others.
+Anyone in the beta can share a hotspot through the Linkr app. Sharing records the
+hotspot's name, location, network type, and access settings so it can be discovered.
 
-Sharing a hotspot does not require special hardware. If you have internet access and a way to create a wireless access point, you can contribute.
-
----
-
-## Observe
-
-Once a hotspot is shared, Linkr begins tracking its availability. The network observes:
-
-- Whether the hotspot is online
-- How consistently it remains available
-- General performance characteristics
-
-This observation is continuous. The data is real, not estimated.
-
----
+Sharing does not require special hardware. If you have internet access and a way to
+create a wireless access point, you can contribute.
 
 ## Discover
 
-Shared hotspots appear on the Linkr map. Users can browse the map to find connectivity near them or in places they plan to visit.
+Shared hotspots appear on the map. Users browse the map to find connectivity near them
+or in a place they are interested in.
 
-The map shows:
-
-- Hotspot locations
-- Current availability status
-- Reliability indicators based on historical data
-
----
+For each hotspot, the map shows its location, network type, signal, security, speed, and
+the contributor's notes.
 
 ## Access
 
-When a user finds a suitable hotspot, they can connect through Linkr. The access model depends on how the contributor configured their hotspot: public, limited, or private.
-
-If access is granted, the user connects. The connection is tracked, and availability data continues to update.
-
----
-
-## The feedback loop
-
-Every connection provides data back to the network. This data improves the accuracy of availability tracking and helps surface the most reliable hotspots.
-
-Contributors see how their hotspots are performing. Users see which hotspots are worth using. The network gets better as more people participate.
+Access is where Linkr is headed next. Today the app helps you *find* hotspots and read
+their details. Automatic connection — where the app joins a network for you — is on the
+roadmap, not in the current build.
 
 <Note>
-Linkr is not a passive directory. It is a live system where contributions create observable, accessible infrastructure.
+Linkr is not a passive directory. The direction is a network where contributions become
+discoverable and, over time, directly accessible.
 </Note>

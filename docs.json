@@ -17,6 +17,7 @@
             "group": "INTRODUCTION",
             "pages": [
               "docs/introduction/what-is-linkr",
+              "docs/introduction/status",
               "docs/introduction/why-connectivity",
               "docs/introduction/how-linkr-is-different",
               "docs/team"
@@ -69,6 +70,17 @@
             ]
           },
           {
+            "group": "API REFERENCE",
+            "openapi": "docs/api-reference/openapi.json",
+            "pages": [
+              "docs/api-reference/overview",
+              "docs/api-reference/authentication",
+              "docs/api-reference/list-hotspots",
+              "docs/api-reference/get-hotspot",
+              "docs/api-reference/network-status"
+            ]
+          },
+          {
             "group": "FOR ORGANIZATIONS",
             "pages": [
               "docs/organizations/overview",
@@ -96,7 +108,7 @@
     "global": {
       "anchors": [
         {
-          "anchor": " ",
+          "anchor": "Follow @uselinkr",
           "href": "https://x.com/uselinkr",
           "icon": "x-twitter"
         }
@@ -116,14 +128,14 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Open App",
-      "href": "http://linkrmap.com/"
+      "label": "Request Access",
+      "href": "https://linkrmap.com/"
     }
   },
   "footer": {
     "socials": {
       "x": "https://x.com/uselinkr",
-      "website": "http://linkrmap.com/"
+      "website": "https://linkrmap.com/"
     }
   }
 }

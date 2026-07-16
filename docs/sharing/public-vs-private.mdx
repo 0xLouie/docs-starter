@@ -1,92 +1,45 @@
 ---
-title: Public vs Private Hotspots
-description: Controlling who can access your shared connectivity
+title: Visibility settings
+description: Controlling how your shared hotspot can be accessed.
 ---
 
-When you share a hotspot, you decide who can access it. Linkr provides three access configurations: public, limited, and private.
+When you share a hotspot, you decide how visible and accessible it is. The current beta
+app gives you two controls.
 
----
+<Info>
+This describes the visibility controls in the current build. Finer-grained access is on
+the roadmap.
+</Info>
 
-## Public hotspots
+## Publicly available
 
-A public hotspot is accessible to any Linkr user.
+The **Publicly available** toggle controls whether your hotspot is shared publicly.
 
-**How it works:**
-- Anyone with a Linkr account can connect
-- No approval required
-- Connections are first-come, first-served
+- **On**: the hotspot is public and discoverable to others
+- **Off**: the hotspot is kept private to you
 
-**Best for:**
-- Community contributions in public spaces
-- Businesses that want maximum discoverability
-- Contributors who want to help as many people as possible
+Use public for connectivity you are happy for others to find and use. Use private for a
+hotspot you want to record but not share broadly.
 
-Public hotspots are the most discoverable. They appear prominently on the map and can be accessed by anyone who finds them.
+## International access
 
----
+The **International access** toggle controls whether access from outside the local area
+is allowed.
 
-## Limited hotspots
+- **On**: allow international access
+- **Off**: keep access local
 
-A limited hotspot is accessible under specific conditions you define.
+## Setting visibility
 
-**How it works:**
-- You set criteria for access (e.g., users from a specific organization, users with verified accounts)
-- Users who meet the criteria can connect
-- Users who do not meet the criteria can see the hotspot but not access it
+You set both toggles when you share a hotspot, on the **Share** tab. You can change a
+hotspot's public/private state later from the **Hotspots** tab.
 
-**Best for:**
-- Organizations that want to share with members only
-- Contributors who want some control over who uses their connectivity
-- Networks with capacity constraints
-
-Limited hotspots appear on the map with an indicator showing their restricted status.
-
----
-
-## Private hotspots
-
-A private hotspot is only accessible to users you explicitly approve.
-
-**How it works:**
-- You must individually approve each user
-- Approved users can connect; others cannot
-- The hotspot is visible on the map but marked as private
-
-**Best for:**
-- Personal networks shared with friends or family
-- Secure environments where access must be controlled
-- Testing before making a hotspot public
-
-Private hotspots are still discoverable, which helps users know connectivity exists in an area, even if they cannot access that specific hotspot.
-
----
-
-## Changing access settings
-
-You can change your hotspot's access configuration at any time:
-
-1. Go to your hotspot's settings in the app
-2. Select the new access level
-3. Save
-
-Changes take effect immediately. If you switch from public to private, existing connections are not interrupted, but new connections will require approval.
-
----
-
-## Visibility vs accessibility
-
-All hotspots are visible on the map regardless of access configuration. This is intentional.
-
-Visibility serves discovery. A user planning a trip can see that connectivity exists in an area, even if some hotspots are private. They can then look for public alternatives or plan accordingly.
-
-Accessibility is controlled by you. Visibility is what makes the map useful.
-
-| Configuration | Visible on map | Accessible |
-|---------------|----------------|------------|
-| Public | Yes | By any Linkr user |
-| Limited | Yes | By users meeting criteria |
-| Private | Yes | By approved users only |
+| Setting | Effect |
+|---------|--------|
+| Publicly available | Whether the hotspot is shared publicly |
+| International access | Whether access from outside the local area is allowed |
 
 <Note>
-Start with the configuration that feels right. You can always adjust as you learn how your hotspot is being used.
+Per-user approval and multi-tier access levels are on the roadmap. Today, visibility is
+the two toggles above. See [Product status](/docs/introduction/status).
 </Note>

@@ -1,0 +1,57 @@
+---
+title: Get a hotspot
+description: Fetch a single hotspot by id.
+openapi: "GET /api/v1/hotspots/{id}"
+---
+
+Returns a single hotspot by its numeric `id`.
+
+```bash
+curl -H "x-api-key: linkr_test_demo01" \
+  "https://linkrmap.com/api/v1/hotspots/1"
+```
+
+## Path parameter
+
+| Parameter | Type | Notes |
+|-----------|------|-------|
+| `id` | integer | Hotspot id. The current dataset uses ids **1–78**. |
+
+## Response
+
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "Tony's Deli & Grocery",
+    "lat": 40.7189,
+    "lng": -73.9847,
+    "mbps": 85,
+    "risk": "Low",
+    "owner": "@tony_deli",
+    "note": "Password on the counter next to the register.",
+    "signal": "Good",
+    "network": "WiFi 5",
+    "security": "WPA2",
+    "uptime": "96.8%",
+    "rating": "4.3/5",
+    "avatar": "#FF6B6B",
+    "lastUsed": "12 minutes ago",
+    "locationImage": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+  }
+}
+```
+
+See the [hotspot schema](/docs/api-reference/list-hotspots#hotspot-schema) for every
+field. Note that `uptime` and `rating` are strings.
+
+## Not found
+
+An id that is not in the dataset returns `404`:
+
+```json
+{
+  "error": "Not found",
+  "message": "Hotspot with id 999 not found."
+}
+```

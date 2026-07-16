@@ -1,0 +1,68 @@
+---
+title: API overview
+description: A read-only REST API over the Linkr New York City preview dataset.
+---
+
+The Linkr API is a small, read-only REST API. It serves the same 78-hotspot New York
+City dataset that powers the public map at [linkrmap.com/demo](https://linkrmap.com/demo).
+
+<Note>
+This API serves the **NYC preview dataset** and is **read-only**. Hotspots created in
+the invitation-only beta app are **not** exposed through it. There are no write, update,
+or delete operations.
+</Note>
+
+## Base URL
+
+```
+https://linkrmap.com
+```
+
+## Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/v1/hotspots` | [List hotspots](/docs/api-reference/list-hotspots) with pagination and filters |
+| `GET` | `/api/v1/hotspots/{id}` | [Get a single hotspot](/docs/api-reference/get-hotspot) by id |
+| `GET` | `/api/v1/network/status` | [Network status](/docs/api-reference/network-status) for the dataset |
+
+All three are `GET`. All three require an [API key header](/docs/api-reference/authentication).
+
+## Quick start
+
+```bash
+curl -H "x-api-key: linkr_test_demo01" \
+  "https://linkrmap.com/api/v1/hotspots?limit=3"
+```
+
+## The dataset
+
+The current dataset is 78 hotspots, all in New York City. It is static — the same
+records every time — so it is well suited to demos, prototypes, and integration tests.
+
+| Field | Distribution |
+|-------|--------------|
+| Risk | Low 54 · Medium 19 · High 5 |
+| Network | WiFi 5 (42) · WiFi 6 (29) · WiFi 6E (7) |
+| Security | WPA2 (39) · WPA3 (31) · Open (5) · WPA3-Enterprise (3) |
+| Region | Manhattan 42 · Brooklyn 20 · Queens 10 · Bronx 6 |
+
+See the [hotspot schema](/docs/api-reference/list-hotspots#hotspot-schema) for the full
+shape of a record.
+
+## CORS
+
+The API is browser-accessible from any origin:
+
+- `Access-Control-Allow-Origin: *`
+- `Access-Control-Allow-Headers: x-api-key, content-type`
+- `Access-Control-Allow-Methods: GET, OPTIONS`
+- Preflight `OPTIONS` requests return `204`.
+
+## Errors
+
+| Status | Body |
+|--------|------|
+| `401` | `{ "error": "Unauthorized", "message": "..." }` — missing or malformed key |
+| `404` | `{ "error": "Not found", "message": "..." }` — no hotspot with that id |
+| `405` | `{ "error": "Method not allowed" }` — a method other than `GET`/`OPTIONS` |

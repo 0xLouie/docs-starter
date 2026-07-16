@@ -1,0 +1,217 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Linkr Public API",
+    "version": "1.0.0",
+    "description": "Read-only API serving the Linkr New York City preview dataset (78 hotspots). No write operations exist. The API key is a shape-checked demo key, not an issued credential."
+  },
+  "servers": [
+    {
+      "url": "https://linkrmap.com",
+      "description": "Production"
+    }
+  ],
+  "security": [
+    {
+      "apiKey": []
+    }
+  ],
+  "paths": {
+    "/api/v1/hotspots": {
+      "get": {
+        "summary": "List hotspots",
+        "description": "Returns a paginated list of hotspots from the NYC preview dataset.",
+        "operationId": "listHotspots",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page. Clamped to 1..100.",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 20 }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of results to skip. Minimum 0.",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 0, "default": 0 }
+          },
+          {
+            "name": "risk",
+            "in": "query",
+            "description": "Filter by risk level (case-insensitive exact match).",
+            "required": false,
+            "schema": { "type": "string", "enum": ["Low", "Medium", "High"] }
+          },
+          {
+            "name": "network",
+            "in": "query",
+            "description": "Filter by network type (case-insensitive exact match). Values contain a space — URL-encode it, e.g. WiFi%206.",
+            "required": false,
+            "schema": { "type": "string", "enum": ["WiFi 5", "WiFi 6", "WiFi 6E"] }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Case-insensitive substring match across name, owner, and note only.",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A page of hotspots.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": { "type": "array", "items": { "$ref": "#/components/schemas/Hotspot" } },
+                    "meta": { "$ref": "#/components/schemas/ListMeta" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or malformed API key.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+          }
+        }
+      }
+    },
+    "/api/v1/hotspots/{id}": {
+      "get": {
+        "summary": "Get a hotspot",
+        "description": "Returns a single hotspot by numeric id.",
+        "operationId": "getHotspot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Numeric hotspot id (1–78 in the current dataset).",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The hotspot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "data": { "$ref": "#/components/schemas/Hotspot" } }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or malformed API key.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+          },
+          "404": {
+            "description": "No hotspot with that id.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+          }
+        }
+      }
+    },
+    "/api/v1/network/status": {
+      "get": {
+        "summary": "Network status",
+        "description": "Returns aggregate status for the NYC preview dataset.",
+        "operationId": "networkStatus",
+        "responses": {
+          "200": {
+            "description": "Network status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "data": { "$ref": "#/components/schemas/NetworkStatus" } }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or malformed API key.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "apiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key",
+        "description": "Value must match linkr_(test|live)_[a-zA-Z0-9]{6,}. This is a shape check, not an issued credential."
+      }
+    },
+    "schemas": {
+      "Hotspot": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "example": 1 },
+          "name": { "type": "string", "example": "Tony's Deli & Grocery" },
+          "lat": { "type": "number", "example": 40.7189 },
+          "lng": { "type": "number", "example": -73.9847 },
+          "mbps": { "type": "number", "example": 85 },
+          "risk": { "type": "string", "enum": ["Low", "Medium", "High"], "example": "Low" },
+          "owner": { "type": "string", "example": "@tony_deli" },
+          "note": { "type": "string", "example": "Password on the counter next to the register." },
+          "signal": { "type": "string", "example": "Good" },
+          "network": { "type": "string", "example": "WiFi 5" },
+          "security": { "type": "string", "example": "WPA2" },
+          "uptime": { "type": "string", "description": "String, not a number.", "example": "96.8%" },
+          "rating": { "type": "string", "description": "String, not a number.", "example": "4.3/5" },
+          "avatar": { "type": "string", "example": "#FF6B6B" },
+          "lastUsed": { "type": "string", "example": "12 minutes ago" },
+          "locationImage": { "type": "string", "example": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" }
+        },
+        "required": ["id", "name", "lat", "lng", "mbps", "risk", "owner", "note", "signal", "network", "security", "uptime", "rating"]
+      },
+      "ListMeta": {
+        "type": "object",
+        "properties": {
+          "total": { "type": "integer", "example": 78 },
+          "limit": { "type": "integer", "example": 20 },
+          "offset": { "type": "integer", "example": 0 },
+          "hasMore": { "type": "boolean", "example": true }
+        }
+      },
+      "NetworkStatus": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string", "example": "operational" },
+          "totalNodes": { "type": "integer", "example": 78 },
+          "activeNodes": { "type": "integer", "description": "Hardcoded as totalNodes - 2.", "example": 76 },
+          "avgLatency": { "type": "string", "description": "Hardcoded string.", "example": "12ms" },
+          "avgUptime": { "type": "string", "example": "94.2%" },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string", "example": "Manhattan" },
+                "nodes": { "type": "integer", "example": 42 },
+                "status": { "type": "string", "example": "operational" }
+              }
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": { "type": "string", "example": "Unauthorized" },
+          "message": { "type": "string", "example": "Invalid or missing API key. Include x-api-key header with a valid key (linkr_test_* or linkr_live_*)." }
+        }
+      }
+    }
+  }
+}

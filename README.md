@@ -1,43 +1,50 @@
-# Mintlify Starter Kit
+# Linkr Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+The documentation site for [Linkr](https://linkrmap.com), built with
+[Mintlify](https://mintlify.com).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+Linkr is a community-powered connectivity network. This repository contains the public
+docs: how Linkr works, the mobile-app guide, the sharing guide, the map guide, and the
+public API reference.
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+> Ground truth: the public map and API cover **New York City only** (78 hotspots) and are
+> a curated preview. The mobile app is in **invitation-only beta**. See
+> `docs/introduction/status.mdx` — it is the single source of truth for what is available.
+> Keep every other page consistent with it.
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## Structure
 
-## Development
+- `docs.json` — navigation, theme, and API reference configuration
+- `docs/` — all documentation pages (`.mdx`)
+- `docs/api-reference/` — API pages and `openapi.json` (the read-only public API)
+- `images/`, `logo/`, `favicon.svg` — brand assets
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+## Local development
+
+Install the [Mintlify CLI](https://www.npmjs.com/package/mint):
 
 ```
 npm i -g mint
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+Run a local preview from the repo root (where `docs.json` lives):
 
 ```
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+The preview runs at `http://localhost:3000`.
 
-## Publishing changes
+## Publishing
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+Changes are deployed by Mintlify's GitHub app when they are pushed to the default branch
+of the connected repository. Install/configure it from the
+[Mintlify dashboard](https://dashboard.mintlify.com).
 
-## Need help?
+## Editing guidelines
 
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+- Match the calm, precise voice already in the pages; avoid hype words.
+- Use the canonical terms: **hotspot**, **the Linkr network**, **contributor**.
+- Keep headings in sentence case.
+- Do not describe features that are not in the current build. If in doubt, check
+  `docs/introduction/status.mdx` and mark roadmap items as roadmap.
