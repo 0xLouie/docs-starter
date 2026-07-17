@@ -8,7 +8,7 @@ docs: how Linkr works, the mobile-app guide, the sharing guide, the map guide, a
 public API reference.
 
 > Ground truth: the public map and API cover **New York City only** (78 hotspots) and are
-> a curated preview. The mobile app is in **invitation-only beta**. See
+> a curated beta. The mobile app is in **invitation-only beta**. See
 > `docs/introduction/status.mdx` — it is the single source of truth for what is available.
 > Keep every other page consistent with it.
 
@@ -27,13 +27,13 @@ Install the [Mintlify CLI](https://www.npmjs.com/package/mint):
 npm i -g mint
 ```
 
-Run a local preview from the repo root (where `docs.json` lives):
+Run a local beta from the repo root (where `docs.json` lives):
 
 ```
 mint dev
 ```
 
-The preview runs at `http://localhost:3000`.
+The beta runs at `http://localhost:3000`.
 
 ## Publishing
 

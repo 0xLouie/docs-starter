@@ -3,7 +3,7 @@
   "info": {
     "title": "Linkr Public API",
     "version": "1.0.0",
-    "description": "Read-only API serving the Linkr New York City preview dataset (78 hotspots). No write operations exist. The API key is a shape-checked demo key, not an issued credential."
+    "description": "Read-only API serving the Linkr New York City beta dataset (78 hotspots). No write operations exist. The API key is a shape-checked demo key, not an issued credential."
   },
   "servers": [
     {
@@ -20,7 +20,7 @@
     "/api/v1/hotspots": {
       "get": {
         "summary": "List hotspots",
-        "description": "Returns a paginated list of hotspots from the NYC preview dataset.",
+        "description": "Returns a paginated list of hotspots from the NYC beta dataset.",
         "operationId": "listHotspots",
         "parameters": [
           {
@@ -121,7 +121,7 @@
     "/api/v1/network/status": {
       "get": {
         "summary": "Network status",
-        "description": "Returns aggregate status for the NYC preview dataset.",
+        "description": "Returns aggregate status for the NYC beta dataset.",
         "operationId": "networkStatus",
         "responses": {
           "200": {

@@ -1,10 +1,10 @@
 ---
 title: Network status
-description: Aggregate status for the NYC preview dataset.
+description: Aggregate status for the NYC beta dataset.
 openapi: "GET /api/v1/network/status"
 ---
 
-Returns aggregate status for the New York City preview dataset.
+Returns aggregate status for the New York City beta dataset.
 
 ```bash
 curl -H "x-api-key: linkr_test_demo01" \
@@ -35,7 +35,7 @@ curl -H "x-api-key: linkr_test_demo01" \
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `status` | string | Always `operational` for the preview dataset |
+| `status` | string | Always `operational` for the beta dataset |
 | `totalNodes` | number | Total hotspots in the dataset (78) |
 | `activeNodes` | number | Hardcoded as `totalNodes - 2` |
 | `avgLatency` | string | Hardcoded `"12ms"` |
@@ -43,6 +43,6 @@ curl -H "x-api-key: linkr_test_demo01" \
 | `regions` | array | Per-borough counts (Manhattan, Brooklyn, Queens, Bronx) |
 
 <Note>
-`activeNodes` and `avgLatency` are fixed values in the preview dataset, not live
+`activeNodes` and `avgLatency` are fixed values in the beta dataset, not live
 measurements. Live monitoring is on the roadmap; see [Product status](/docs/introduction/status).
 </Note>
